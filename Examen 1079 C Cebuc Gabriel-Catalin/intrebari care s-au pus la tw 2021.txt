@@ -1,0 +1,83 @@
+Care e diferența dintre this.state.ceva și this.ceva?
+
+React components has a built-in state object.
+The state object is where you store property values that belongs to the component.
+When the state object changes, the component re-renders.
+
+this keyword refers to an object, that object which is executing the current bit of javascript code.
+
+
+Ce e middleware și cum funcționează?
+Middleware is computer software that provides services to software applications beyond those available from the oprating system. Middleware makes it easier for software developers to implement communication and input/output, so they can focus on the specific purpose of the application.
+
+Express is a routing and middleware web framework that has minimal functionality of its own: An Express application is essentially a series of middleware function calls.
+
+Ce e app.use?
+The app object is instantiated on creation of the Express server. It has a middleware stack that can pe customized in app.configure().
+To set up your middleware, you can invoke app.use() for every middleware layer that you want to add, and it will add onto your Express middleware stack. 
+Each layer is essentially adding a function that specifically handles something to your flow through the middleware.
+
+Ce metodă transformă un array în string?
+The join method creates and returns a new string by concatenating all of the elements in an array, separated by commas or a specified separator string.
+toString() - same thing, bu i don't think you can change the separator.
+
+Când se apelează componentDidMount()?
+
+Care e diferența dintre string și String?
+string - primitive
+are used extensively.
+only hold the value
+are immutable thus are thread safe
+has no methods
+cannot create tow different literals with the same value.
+passed by value that is copy of primitive itself
+String - object
+are scarcely used
+have the ability to hold the property
+is mutable
+has methods
+you can create new objects with the keyword new
+wraps primitive data to create an object
+passed by reference
+
+
+Funcția split?
+The split method divides a String into an ordered list of substrings, puts there substrings into an array, and returns the array. The division is done by searching for a pattern, where the pattern is provided as the first parameter in the method's call.
+
+Ce înseamnă innerText?
+The innerText property sets or returns the text content of the specified node, and all its descendants.
+If you set the innerText property, any child nodes are removed are replaced by a single text node containing the specified string.
+
+What is difference between innerHTML and innerText?
+innerText returns all text contained by an element and all its child elements. innerHtml returns all text, including html tags, that is contained by an element.
+
+textContent gets the content of all elements, including <script> and <style> elements. In contrast, innerText only shows “human-readable” elements. textContent returns every element in the node. In contrast, innerText is aware of styling and won't return the text of “hidden” elements
+
+Când se apelează render() ?
+React has four built-in methods that gets called, in this order, when mounting a component:
+- constructor() - The constructor method is called before anything else, when the component is initiated, and it is the natural place to set up the initial state and other initial values. The constructor method id called with the props, as arguments, and you should always start by calling the super(props) before anything else, this will initiate the parent's constructor method and allows the component to inherit methods from its parent.
+- render() - The render method is required, and is the method that actually outputs the HTML to the DOM.
+- componentDidMount() - The componetDidMount method is called after the component is rendered. This is where you run statements that require that the component is already placed in the DOM.
+The render() method is required and will always be called, the others are optional and will be called if you define them.
+
+componentDidUpdate - is called after the component is updated in the DOM.
+
+Ce pot folosi în loc de where la delete?
+destroy?
+
+Care e logica din spatele unui algoritm de JS?
+An algorithm is a function that takes in some data structure as input and manipulates it into some kind of ouput. The type of output that we get is based on the logic of the algorithm. 
+
+De ce merge string.toUpperCase() dacă string e primitivă?
+JavaScript allows us to work with primitives (strings, numbers, etc.) as if they were objects. They also provide methods to call as such. 
+The solution looks a little bit awkward, but here it is:
+
+1. Primitives are still primitive. A single value, as desired.
+2. The language allows access to methods and properties of strings, numbers, booleans and symbols.
+3. In order for that to work, a special “object wrapper” that provides the extra functionality is created, and then is destroyed.
+
+Here’s what actually happens in str.toUpperCase():
+
+1. The string str is a primitive. So in the moment of accessing its property, a special object is created that knows the value of the string, and has useful methods, like toUpperCase().
+2. That method runs and returns a new string (shown by alert).
+3. The special object is destroyed, leaving the primitive str alone. So primitives can provide methods, but they still remain lightweight.
